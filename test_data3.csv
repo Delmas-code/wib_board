@@ -1,0 +1,3 @@
+name,description,image,quantity,price(usd,xaf,gbp,euro,jpy)
+product 3,"Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo, atque saepe possimus dolorem ipsam nisi molestiae illum tempore deleniti sunt optio sapiente aliquam numquam, distinctio eaque. Dolore beatae excepturi hic?",product-3.png,50,"[1,2,3,4,5]"
+product 4,"Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo, atque saepe possimus dolorem ipsam nisi molestiae illum tempore deleniti sunt optio sapiente aliquam numquam, distinctio eaque. Dolore beatae excepturi hic?",product-4.png,27,"[1,2,3,4,5]"

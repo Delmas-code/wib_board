@@ -1,0 +1,3 @@
+name,description,image,quantity,price(usd,xaf,gbp,euro,jpy)
+product 3,Lorem,C:\Users\UI\Desktop\wib\wib_board\staticfiles\assets\img\table_images\product-3.png,50,"[1,2,3,4,5]"
+product 4,Ipsum,C:\Users\UI\Desktop\wib\wib_board\staticfiles\assets\img\table_images\product-4.png,27,"[1,2,3,4,5]"

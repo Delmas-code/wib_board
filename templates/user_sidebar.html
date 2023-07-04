@@ -1,0 +1,49 @@
+{% load static %}
+
+<div class="sidebar sidebar-dark sidebar-fixed" id="sidebar">
+  <div class="sidebar-brand d-none d-md-flex">
+    <svg class="sidebar-brand-full" width="118" height="46" alt="CoreUI Logo">
+      <use xlink:href= {% static "vendors/@coreui/icons/svg/brand.svg" %}#cib-at-and-t></use>
+    </svg>
+    <svg class="sidebar-brand-narrow" width="46" height="46" alt="CoreUI Logo">
+      <use xlink:href= {% static "vendors/@coreui/icons/svg/brand.svg" %}#cib-at-and-t></use>
+    </svg>
+  </div>
+  <ul class="sidebar-nav" data-coreui="navigation" data-simplebar="">
+    <li class="nav-item">
+      <a class="nav-link" href="{% url "dashboard:user_index" %}">
+        <svg class="nav-icon">
+          <use
+            xlink:href= {% static "vendors/@coreui/icons/svg/free.svg" %}#cil-speedometer
+          ></use>
+        </svg>
+        Dashboard</a
+      >
+    </li>
+
+    <li class="">
+      <a class="nav-link" href="#">
+        <svg class="nav-icon">
+          <use
+            xlink:href= {% static "vendors/@coreui/icons/svg/free.svg" %}#cil-color-border
+          ></use></svg
+        >Edit File<span class="badge badge-sm bg-info ms-auto">NEW</span></a
+      >
+    </li>
+
+    <li class="nav-title">Extras</li>
+    <li class="nav-item">
+      <a class="nav-link" href="#">
+        <svg class="nav-icon">
+          <use
+            xlink:href= {% static "vendors/@coreui/icons/svg/free.svg" %}#cil-settings
+          ></use>
+        </svg>
+        Settings</a
+      >
+    </li>
+    
+    <li class="nav-divider"></li>
+  </ul>
+ 
+</div>

@@ -1,0 +1,163 @@
+{% extends "base.html" %} {% load static %} {% block content %}
+<div class="body flex-grow-1 px-3">
+  <div class="container-lg">
+    
+    <!-- /.row-->
+    <div class="row">
+      <div class="col-md-12">
+        <div class="card mb-4">
+          <div class="card-header">Admin Details
+            <div class="dropdown">
+              <button
+                class="btn btn-transparent p-0"
+                type="button"
+                data-coreui-toggle="dropdown"
+                aria-haspopup="true"
+                aria-expanded="false"
+              >
+                <svg class="icon">
+                  <use
+                    xlink:href= {% static "vendors/@coreui/icons/svg/free.svg" %}#cil-options
+                  ></use>
+                </svg>
+              </button>
+              <div class="dropdown-menu dropdown-menu-end">
+                <a class="dropdown-item" href="{% url 'base:create_admin' %}"
+                  >Create Admin Account</a
+                > 
+              </div>
+            </div>
+          </div>
+          <div class="card-body">
+            <div class="row">
+              <div class="col-sm-12">
+                <div class="row">
+                  <div class="col-6 col-md-3"></div>
+                  <div class="col-6 col-md-3">
+                    <div
+                      class="border-start border-start-4 border-start-info px-3 mb-3"
+                    >
+                      <small class="text-medium-emphasis">Total Admins</small>
+                      <div class="fs-5 fw-semibold">{{ admin_count }}</div>
+                    </div>
+                  </div>
+                  <!-- /.col-->
+                  <div class="col-6 col-md-3">
+                    <div
+                      class="border-start border-start-4 border-start-success px-3 mb-3"
+                    >
+                      <small class="text-medium-emphasis"
+                        >Total Users</small
+                      >
+                      <div class="fs-5 fw-semibold">{{ user_count }}</div>
+                    </div>
+                  </div>
+                  <!-- /.col-->
+                  <div class="col-6 col-md-3"></div>
+
+                </div>
+                <!-- /.row-->
+                <hr class="mt-0" />
+                
+            </div>
+            <!-- /.row--><br />
+            <div class="table-responsive">
+              <table class="table border mb-0">
+                <thead class="table-dark fw-semibold">
+                  <tr class="align-middle">
+                    <th class="text-center">
+                      <svg class="icon">
+                        <use
+                          xlink:href= {% static "vendors/@coreui/icons/svg/free.svg" %}#cil-people
+                        ></use>
+                      </svg>
+                    </th>
+                    <th>User</th>
+                    <th>Email</th>
+                    <th class="text-center">Role</th>
+                    <th></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {% for admin in admin_list %}
+                    <tr class="align-middle">
+                      <td class="text-center">
+                        <div class="avatar avatar-md">
+                          <img
+                            class="avatar-img"
+                            src= {% static "assets/img/avatars/1.jpg" %}
+                            alt="user@email.com"
+                          /><span class="avatar-status bg-success"></span>
+                        </div>
+                      </td>
+                      <td>
+                        <div>{{ admin.username }}</div>
+                        <div class="small text-medium-emphasis">
+                          <span>New</span> | Registered: {{ admin.reg_date }}
+                        </div>
+                      </td>
+                      
+                      <td>
+                        <div class="clearfix">
+                          <div class="float-start">
+                            <div class="fw-semibold">{{ admin.email }}</div>
+                          </div>
+                        </div>
+                      </td>
+                      
+                      <td class="text-center">
+                        <div class="small text-medium-emphasis">sub</div>
+                        <div class="fw-semibold">admin</div>
+                      </td>
+                      <td>
+                        <div class="dropdown">
+                          <button
+                            class="btn btn-transparent p-0"
+                            type="button"
+                            data-coreui-toggle="dropdown"
+                            aria-haspopup="true"
+                            aria-expanded="false"
+                          >
+                            <svg class="icon">
+                              <use
+                                xlink:href= {% static "vendors/@coreui/icons/svg/free.svg" %}#cil-options
+                              ></use>
+                            </svg>
+                          </button>
+                          <div class="dropdown-menu dropdown-menu-end">
+                            {% comment %} <a class="dropdown-item text-danger" href="#"
+                              >Delete</a
+                            > {% endcomment %}
+                          </div>
+                        </div>
+                      </td>
+                    </tr>
+                  {% endfor %}
+ 
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- /.col-->
+    </div>
+    <!-- /.row-->
+  </div>
+</div>
+
+{% endblock %} {% block JSscripts %}
+<!-- CoreUI and necessary plugins-->
+<script src= {% static "vendors/@coreui/coreui/js/coreui.bundle.min.js" %}></script> 
+<script src= {% static "vendors/simplebar/js/simplebar.min.js" %}></script>
+<!-- Plugins and scripts required by this view-->
+<script src= {% static "vendors/chart.js/js/chart.min.js" %}></script>
+<script src= {% static "vendors/@coreui/chartjs/js/coreui-chartjs.js" %}></script>
+<script src= {% static "vendors/@coreui/utils/js/coreui-utils.js" %}></script>
+<script src= {% static "js/main.js" %}></script>
+<script src= {% static "js/table_js/jquery.min.js" %}></script>
+<script src= {% static "js/table_js/popper.js" %}></script>
+<script src= {% static "js/table_js/bootstrap.min.js" %}></script>
+<script src= {% static "js/table_js/main.js" %}></script>
+<script></script>
+{% endblock %}
